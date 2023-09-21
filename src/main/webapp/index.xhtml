@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+   <title>JSF App</title>
+</head>
+<body>
+<h2>Praticando com JSF </h2>
+#{testAppBean.sayHello()}
+#{testAppBean.personName}
+<h3>Dados de Pessoa:</h3>
+#{testAppBean.personInfo}
+<h2>Events and Tags</h2>
+<h:form>
+   <h:inputText value="#{pessoa.nome}"></h:inputText>
+   <h:commandButton value="Click Aqui" action="info"></h:commandButton>
+</h:form>
+<h2>Events and Tags Binding</h2>
+<h:form>
+   <h:inputText value="#{pessoa.nome}"></h:inputText>
+   <h:commandButton value="Click Aqui" action="bindinput"></h:commandButton>
+</h:form>
+<h2>Events and Tags ao clicar no botão algo será exectutado no servidor</h2>
+<p>seŕa executada á ação de um método da classe TestApp</p>
+<h:form>
+   <h:inputText value="#{pessoa.nome}"></h:inputText>
+   <h:commandButton value="Click Aqui" actionListener="#{testAppBean.onClickBinding}"></h:commandButton>
+</h:form>
+
+<h2>Events and Tags</h2>
+<p>ao mudar o valor compo input também será atualizado no label</p>
+<h:form>
+   <h:inputText value="#{pessoa.nome}">
+      <f:ajax listener="#{testAppBean.inputChange}" render="output"></f:ajax>
+   </h:inputText>
+   <h:outputText id="output" value="#{testAppBean.personName}"></h:outputText>
+   <h:commandButton value="Click Aqui" actionListener="#{testAppBean.onClickBinding}"></h:commandButton>
+</h:form>
+
+</body>
+</html>

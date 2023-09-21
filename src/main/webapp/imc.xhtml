@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: krossby
+  Date: 12/11/2022
+  Time: 16:33
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+    <title>JSF App-IMC</title>
+    <link type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"></link>
+</h:head>
+
+<h:body>
+    <div class="container" style="background-color: gray">
+        <section class="row">
+            <div class="jumbotron">
+                <h1 class="display-4">IMC - Calcular</h1>
+                <p class="lead">Preencha os valores peso e altura e logo clique em Calcular</p>
+                <h:form id="imcForm" class="row g-3">
+                    <div class="mb-3">
+                        <h:outputLabel value="Peso" class="form-label"/>
+                        <h:inputText value="#{imcBean.peso}" class="form-control"></h:inputText>
+                    </div>
+                    <div class="mb-3">
+                        <h:outputLabel value="Altura(cm)" class="form-label"/>
+                        <h:inputText value="#{imcBean.altura}" class="form-control"></h:inputText>
+                    </div>
+                    <div class="mb-3">
+                        <h:commandButton value="Calcular" class="btn btn-primary form-control" action="#{imcBean.onCalcularImc}"></h:commandButton>
+                    </div>
+                </h:form>
+
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+</h:body>
+
+</html>
